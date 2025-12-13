@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Noto Serif SC', 'STSong', 'SimSun', serif;
+  }
+  
+  body {
+    @apply bg-beige-50 text-ink-800;
+  }
+}
+
+@layer components {
+  .poem-card {
+    @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-beige-200;
+  }
+  
+  .poem-title {
+    @apply text-xl font-semibold text-ink-900 hover:text-primary-700 transition-colors;
+  }
+  
+  .poem-author {
+    @apply text-sm text-ink-600 hover:text-primary-600 transition-colors;
+  }
+  
+  .poem-content {
+    @apply text-ink-800 leading-relaxed;
+  }
+  
+  .tag-badge {
+    @apply inline-block px-2 py-0.5 text-xs rounded-full bg-beige-100 text-ink-600 hover:bg-primary-100 hover:text-primary-700 transition-colors cursor-pointer;
+  }
+  
+  .btn-action {
+    @apply p-2 rounded-full hover:bg-beige-100 text-ink-500 hover:text-primary-600 transition-colors;
+  }
+  
+  .nav-link {
+    @apply text-ink-700 hover:text-primary-600 transition-colors font-medium;
+  }
+  
+  .nav-link-active {
+    @apply text-primary-600 border-b-2 border-primary-500;
+  }
+  
+  .search-input {
+    @apply w-full px-4 py-2 rounded-full border border-beige-300 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition-all bg-white;
+  }
+  
+  .section-title {
+    @apply text-2xl font-semibold text-ink-900 mb-6;
+  }
+  
+  .dynasty-tag {
+    @apply inline-block px-3 py-1 text-sm rounded bg-primary-100 text-primary-800;
+  }
+}
+
+@layer utilities {
+  .text-vertical {
+    writing-mode: vertical-rl;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
