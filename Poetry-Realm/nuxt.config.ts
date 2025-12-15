@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/scripts'],
   
   ssr: true,
   
@@ -27,8 +27,19 @@ export default defineNuxtConfig({
     }
   },
 
+  $production: {
+    scripts: {
+      registry: {
+        googleAnalytics: {
+          id: 'G-CMP0JW5KJT',
+        }
+      }
+    }
+  },
+
   runtimeConfig: {
-    databaseUrl: process.env.DATABASE_URL
+//    databaseUrl: process.env.DATABASE_URL
+    databaseUrl: 'postgresql://root:root@localhost:5432/pipigudb'
   },
 
   nitro: {
@@ -45,6 +56,6 @@ export default defineNuxtConfig({
 
   devServer: {
     host: '0.0.0.0',
-    port: 5000
+    port: 3000
   }
 })
