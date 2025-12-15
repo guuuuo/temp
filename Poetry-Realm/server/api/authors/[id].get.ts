@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
     `SELECT a.*, d.dynasty_name
      FROM authors a
      LEFT JOIN dynasties d ON a.dynasty_code = d.dynasty_code
-     WHERE a.author_id = $1 OR a.author_code = $1`,
+     WHERE a.author_id::text = $1 OR a.author_code = $1`,
     [id]
   )
 

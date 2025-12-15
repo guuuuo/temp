@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
      LEFT JOIN authors a ON w.author_id = a.author_id
      LEFT JOIN dynasties d ON w.dynasty_code = d.dynasty_code
      LEFT JOIN categories c ON w.category_code = c.category_code
-     WHERE w.work_id = $1 OR w.work_code = $1`,
+     WHERE w.work_id::text = $1 OR w.work_code = $1`,
     [id]
   )
 
